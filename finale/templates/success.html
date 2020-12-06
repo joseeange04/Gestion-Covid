@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/bootstrap.min.css')}}"/>
+</head>
+<body>
+<p>add successfull</p>
+<table class="table table-striped table-dark">
+							<thead>
+								<tr>
+									<th scope="col">reference</th>
+									<th scope="col">mois</th>
+									<th scope="col">nouveaux cas</th>
+									<th scope="col">Guéris</th>
+									<th scope="col">Décés</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for l in i %}
+								<tr>
+									<th scope="row">{{l['_id']}}</th>
+									<th>{{l['mois']}}</th>
+									<td>{{l['Nouveau_cas']}}</td>
+									<td>{{l['Gueris']}}</td>
+									<td>{{l['Deces']}}</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+
+<a href="/final" class="btn btn-danger"> afficher madagascar</a>
+<p>si vous souhaiter ajouter encore </p><a href="/add">cliquez-ici</a>
+<a href="/liste" class="btn btn-success"> afficher la liste </a>
+<a href="/" class="btn btn-warning">Home</a>
+<a href="/supprimer" class="btn btn-danger"> supprimer </a>
+</body>
+</html>

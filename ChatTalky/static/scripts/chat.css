@@ -1,0 +1,197 @@
+@font-face{
+    font-family : "koko";
+    src : url()
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    width: 1500px;
+    height: 780px;
+}
+
+.wrap{
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    background-color : white;
+    height : 80%;
+    width : 60%;
+    border-radius : 25px;
+    overflow : hidden;
+}
+
+.header {
+    display: flex;
+    background: linear-gradient(135deg, #60105F, #60105F, #4A0C49, #60105F);
+    overflow: hidden;
+    width: 100%;
+    height: 15%;
+    border: none;
+}
+
+.logo{
+    padding-left : 30px;
+    text-decoration : none;
+}
+
+.header-button1 {
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+    top: 4%;
+    border-radius: 10px;
+    background: transparent;
+    border-bottom: 1px solid white;
+}
+
+.header-button2 {
+    position: absolute;
+    right: 17%;
+    padding: 10px;
+    top: 4%;
+    border-radius: 10px;
+    background: transparent;
+    border-bottom: 1px solid white;
+}
+
+.header-button3 {
+    position: absolute;
+    right: 29%;
+    padding: 10px;
+    top: 4%;
+    border-radius: 10px;
+    background: transparent;
+    border-bottom: 1px solid white;
+}
+
+.header-button1 input {
+    border-radius: 20px;
+    background: transparent;
+    width: 57px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    
+    font-weight: bold;
+}
+
+.header-button2 input {
+    border-radius: 20px;
+    background: transparent;
+    width: 57px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    
+    font-weight: bold;
+}
+
+.header-button3 input {
+    border-radius: 20px;
+    background: transparent;
+    width: 57px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    
+    font-weight: bold;
+}
+
+
+
+
+.header p{
+    font-size : 30px;
+}
+
+
+#true-form{
+    display : flex;
+    height : 85%;
+    background-color : cornflowerblue;
+}
+
+#navigation {
+    padding: 20px;
+    color: white;
+    background: linear-gradient(100deg, #60105F, #60105F, #4A0C49);
+    width: 20%;
+}
+
+#center-element{
+    height : 100%;
+    width : 100%;
+    overflow : hidden;
+}
+
+#message-display {
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: black;
+    color: #B00496;
+}
+
+
+*::-webkit-scrollbar{
+    width : 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background : red;
+}
+
+*::-webkit-scrollbar-thumb {
+    background : blue;
+}
+
+*::-webkit-scrollbar:hover  {
+    background : green;
+}
+
+
+#left-stuff {
+    width: 30%;
+    background: linear-gradient(250deg, #60105F, #60105F, #4A0C49);
+}
+
+#input input{
+    background : transparent;
+    width : 75%;
+    height : 40%;
+    margin : 6px;
+    border : none;
+    border-bottom : 1px solid white;
+}
+
+#input{
+    height : 20%;
+    background-color : grey;
+}
+
+    #input button {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top : 10px;
+        padding-bottom : 10px;
+        margin: 5px;
+        background: transparent;
+    }
+
+.select-room {
+    padding: 10px 0;
+    padding-left: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100px;
+}
+
+.select-room:hover{
+    color:#cb06d1;
+    background: white;
+}
+

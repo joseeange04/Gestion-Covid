@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login - TALKY</title>
+    <link type="text/css" href="/static/scripts/login.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <main>
+      
+        <div class="wrapper">
+            <h1>Login</h1>
+
+            <form action="{{url_for ('log_in')}}" method="POST">
+
+                <div class="soratra">
+                    {{ form.username (class_= 'form-control', placeholder="Username", autocomplete = 'off', autofocus = true)}}
+                    <ul>
+                        {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="soratra">
+                    {{ form.password (class_= 'form-control', placeholder="Password")}}
+                    <ul>
+                        {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="button">
+                    {{ form.submit }}
+                </div>
+                <p>Not subscribed yet</p>
+
+                <div class="button">
+                    <a href="http://127.0.0.1/sign_in"><input type="button" value="Sign in"/></a>
+                </div>
+
+                {{form.csrf_token}}
+
+            </form>
+        </div>
+        
+    </main>
+    <footer>
+      
+    </footer>
+</body>
+</html>

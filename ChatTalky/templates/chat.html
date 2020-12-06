@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Chat</title>
+    <link type="text/css" href="/static/scripts/chat.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+        const username = `{{ username }}`;
+    </script>
+
+    <div class="wrap">
+        <nav class="header">
+            <div class="logo"><a href="#"><p>Talky</p></a></div>
+            <div class="header-button1">
+                <a href="http://127.0.0.1:5000/sign_in"><input type="button" value="Sign in" /></a>
+            </div>
+            <div class="header-button2">
+                <a href="http://127.0.0.1:5000/sign_in"><input type="button" value="Log in" /></a>
+            </div>
+            <div class="header-button3">
+                <a href="http://127.0.0.1:5000/sign_in"><input type="button" value="Profil" /></a>
+            </div>
+        </nav>
+        <div id="true-form">
+            <nav id="navigation">
+                <h2>Chat</h3>
+                <div>
+                    <h3>Rooms</h3>
+                    {% for room in rooms %}
+                    <p class="select-room">{{ room|title }}</p>
+                    {% endfor %}
+                </div>
+                <div>
+                    
+
+                </div>
+                
+            </nav>
+
+            <div id="center-element">
+                <div id="message-display">
+                        
+                </div>
+
+                <div id="input">
+                    <input type="text" id="user_message" placeholder="Send message here" autocomplete="off" />
+                    <button type="button" id="send-button">
+                        Send
+                    </button>
+                </div>
+
+
+            </div>
+
+            <div id="left-stuff">
+
+            </div>
+
+        </div>
+    </div>
+
+                            
+
+
+
+    <script type="text/javascript" src="{{url_for('static', filename = 'scripts/socketio.js')}}"></script>
+    <!--<ul id="mess">
+
+    </ul>
+    <input type="text" id="myMessage"/>
+    <button id="sendbutton">Alefa</button>-->
+</body>
+</html>

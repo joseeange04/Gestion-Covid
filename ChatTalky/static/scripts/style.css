@@ -1,0 +1,455 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    margin : 0;
+    padding: 0;
+    background: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1600px;
+}
+
+.banner{
+    position: relative;
+    height: 100vh;
+    width:100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('land1.jpg');
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size : cover;
+    background-repeat: no-repeat ;
+    color: ivory;
+    overflow: hidden;
+    min-height: 50vh;
+}
+
+.banner .info-heading{
+    position: absolute;
+    height: auto;
+    width: 80%;
+    top: 30%;
+    left: 20%;
+    transform: translate(-20%, -25%);
+}
+
+
+.middle-head{
+    display: flex;
+}
+
+
+
+
+.banner .info-heading .heading{
+    position: relative;
+    height: auto;
+    width: 50%;
+    font-size : 68px;
+    font-weight: 700;
+}
+
+.heading span{
+    position: absolute;
+    left: 90%;
+    transform: translateX(-10%);
+    font-size: 2em;
+}
+
+
+.banner .info-heading .heading span::before{
+    position: absolute;
+    content: attr(data-text1);
+    transition: 0.5s all ease-in-out;
+    animation : animate1 8s linear infinite 0.2s;
+}
+
+
+.banner .info-heading ul{
+    position: relative;
+    height: auto;
+    width: 50%;
+    margin-left: 5%;
+    transform: translateX(-5%);
+}
+
+
+.banner .info-heading ul li {
+     list-style-type: none;
+     display: inline-block;
+     margin: 0 3%;
+}
+
+.banner .info-heading ul li a{
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.banner .info-heading ul li a:hover {
+    color: #d997db;
+
+}
+
+
+
+.arrowdown{
+    position: relative;
+    height: 80px;
+    width: 20px;
+    padding : 10px;
+    margin-left: 8%;
+    margin-top: 8%;
+    transform: translate(-8%, -8%);
+    color : white;
+
+}
+
+
+.arrowdown a{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+.arrowdown a i{
+    animation: animate2 0.8s linear infinite;   
+}
+
+.arrowdown a:hover{
+    color: #d997db;
+}
+
+@keyframes animate2{
+    0%{
+        margin-top: 0px;
+    }
+    0%{
+        margin-top: 10px;
+    }
+    0%{
+        margin-top: 4px;
+    }
+    0%{
+        margin-top: 11px;
+    }
+    0%{
+        margin-top: 4px;
+    }   
+    0%{
+        margin-top: 9px;
+    }
+    
+}
+
+@keyframes animate1{
+    0%{
+        content: attr(data-text1);
+    }
+    20%{
+        content: attr(data-text1);
+    }
+    38%{
+        content: attr(data-text2);
+    }
+    54%{
+        content: attr(data-text2);
+    }
+    68%{
+        content: attr(data-text3);
+    }
+    84%{
+        content: attr(data-text3);
+    }
+    100%{
+        content: attr(data-text1);
+    }
+}
+
+
+.banner::before{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 300px 0 0 500px;
+    border-color: transparent transparent transparent whitesmoke;
+    left : 0;
+    bottom: -5%;
+}
+
+.banner::after{
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 0 0 300px 1500px;
+    border-color: transparent transparent whitesmoke transparent;
+    right : 0;
+    bottom: -5%;
+}
+
+.sec1{
+    height: 50vh;
+    background: whitesmoke;
+    align-items: center;
+    text-align: center;
+}
+
+
+.sec1 h1{
+    font-size: 4em;
+    margin-top: 190px;
+}
+
+.sec2{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('land1.jpg');
+    border-left: 250px solid transparent;
+    border-bottom : 300px solid transparent;   
+    border-right: 1348px solid transparent;  
+    border-top: 200px solid whitesmoke;  
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size : cover;
+    background-repeat: no-repeat ;
+    color: ivory;
+}
+
+
+
+.button{
+    position: absolute;
+    display: flex;
+    max-width: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    flex-direction: row;
+}
+
+.button a{
+    position: relative;
+    font-family: 'consolas';
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 60px;
+    width: 10%;
+    color:#c400ca ;
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #000500);
+}
+
+
+.button a:hover{
+    background: #c400ca ;
+    color: black;
+    box-shadow: 0 0 5px #c400ca,
+                0 0 25px #c400ca,
+                0 0 50px #c400ca,
+                0 0 200px #c400ca;
+}
+
+.button a span{
+    position: absolute;
+    display: block;
+}
+
+
+.button a span:nth-child(1){
+    top : 0;
+    left: -100%;
+    width: 100%;
+    height : 2px;
+    background: linear-gradient(90deg, transparent, #c400ca);
+    animation: animate31 1s linear infinite;
+
+}
+
+@keyframes animate31{
+        0%{
+            left: -100%;
+        }
+        50%,100%
+        {
+            left: 100%;
+        }
+}
+
+.button a span:nth-child(2){
+    top : -100%;
+    right: 0;
+    width: 2px;
+    height : 100%;
+    background: linear-gradient(180deg, transparent, #c400ca);
+    animation: animate32 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate32{
+        0%{
+            top : -100%;
+        }
+        50%,100%
+        {
+            top: 100%;
+        }
+}
+
+.button a span:nth-child(3){
+    bottom : 0%;
+    right: -100%;
+    width: 100px;
+    height : 2px;
+    background: linear-gradient(270deg, transparent, #c400ca);
+    animation: animate33 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate33{
+        0%{
+            right : -100%;
+        }
+        50%,100%
+        {
+            right: 100%;
+        }
+}
+
+.button a span:nth-child(4){
+    bottom : -100%;
+    left: 0;
+    width: 2px;
+    height : 100%;
+    background: linear-gradient(360deg, transparent, #c400ca);
+    animation: animate34 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate34{
+        0%{
+            bottom : -100%;
+        }
+        50%,100%
+        {
+            bottom: 100%;
+        }
+}
+
+
+
+.sec2 .join{
+    position: absolute;
+    color: whitesmoke;
+    font-size: 3em;
+    font-weight: 600;
+    bottom: -135%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* html {
+    height:100;
+    overflow: hidden;
+}
+
+body{
+    color:purple;
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "luna";
+}
+
+header{
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 30vw 0 50vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    
+}
+
+
+header h1{   
+    font-size: 100px;
+    margin-top: -100px;
+    font-family: algerian;
+    text-align: center;
+}
+
+header,header::before{
+    background: 50% 50% / cover;
+
+}
+
+header::before{
+    bottom: 0 ;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background-image: url(tallky.jpg);
+    background-size: cover;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) , scale(2);
+    z-index: -1;
+    min-height: 100vh;
+
+}
+
+
+header * {
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding:  1em 0; 
+
+} */

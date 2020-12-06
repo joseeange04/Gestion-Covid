@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Atsinanana</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="{{url_for('static',filename='/css/AT-pro-logo.png')}}" />
+
+    <!-- Import lib -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style2.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/all.min.css')}}" />
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- navbar -->
+    <div class="navbar">
+        <!-- nav left -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link">
+                    <a href="/" target="_blank" class="btn btn-danger"> Revenir à la page d'accueil</a>
+                </a>
+            </li>
+
+        </ul>
+        <!-- nav right -->
+        <ul class="navbar-nav nav-right">
+            <li class="nav-item mode">
+                <a class="nav-link" href="#" onclick="switchTheme()">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end navbar -->
+    <!-- main content -->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-primary">
+                    <div class="total-cases">
+                        <h3>Cas Confirmés</h3>
+                        <p>{{a}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-warning">
+
+                    <h3>Guéris</h3>
+                    <p>{{b}}</p>
+
+
+                </div>
+            </div>
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-success">
+                    <h3>Décès</h3>
+                    <p>{{c}}</p>
+
+
+                </div>
+            </div>
+            <div class="col-3 col-m-6 col-sm-6">
+                <div class="counter bg-danger">
+                    <h3>En Traitement</h3>
+                    <p>86</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 col-m-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Table
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Mois</th>
+                                    <th scope="col">Nouveau_cas</th>
+                                    <th scope="col">Guéris</th>
+                                    <th scope="col">Décés</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for o in i %}
+                                <tr>
+                                    <td scope="row">{{o['mois']}}</td>
+                                    <td>{{o['Nouveau_cas']}}</td>
+                                    <td>{{o['Gueris']}}</td>
+                                    <td>{{o['Deces']}}</td>
+                                </tr>
+                                {% endfor %}
+                                <span class="dot">
+											<i class="bg-danger"></i>
+											D
+										</span>
+                                </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Chartjs
+                        </h3>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-4 col-m-12 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>
+                                .......
+                            </h3>
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" viewbox="0 0 1000 1985" id="mada-map">
+
+						<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" viewbox="0 0 1000 1985" id="mada-map">
+
+						<a href="/Atsimo-Andrefana"><g id="Atsimo-Andrefana"><title>Atsimo-Andrefana</title><desc><image xlink:href="{{url_for('static',filename='image/Atsimo-Andrefana.jpg')}}"></image><p></p></desc> <path d="M351.2 1302.5l-1.8 3.3-0.9 1.3-1.6 1.4-0.4 0.6-0.3 1.6 2.6 14.9 0.2 1.8-0.4 3.6-0.3 0.8-0.7 1.4-0.5 0.5-1.5 0.5-2.6 0.3-2.1 1-1.5 0.3-1.9 1.2-1.3 0.6-0.6 0.4-0.8 1.3-2.3 0.7-0.5 0.5-0.8 1.2-0.6 1.6-0.9 1-1.6 0.4-0.6 0.4-0.9 1.1-0.2 0.8 0.2 2.7-0.3 1.7-0.7 1.4-5.1 6-0.5 1.6 0.2 0.8 0.8 4 0.1 1.9-0.1 0.9-0.8 3.3 0.1 1.6 2.3 9.7 0 0.9-0.1 1.7-0.9 1.2-2.7 1.3-0.3 0.5-0.1 1.1 0.3 1.5 0.2 1.6-0.4 1.4-0.6 0.5-1.2 0.7-1.6 0.5-1.7 0.3-4.7 0-1.6 0.5-1.2 0.8-0.9 1.1-0.5 1.5-3.2 18.7-0.8 1.2-1.4 0.7-1.6 0.4-1.4 0.6-0.8 1.2-0.7 2.4-0.3 0.8-1.2 0.8-5.6 1.3-5.8 0-1.7 0.3-1.4 0.5-1.6 1.4-0.7 1.3 0.5 1.5 1.1 2.1 3 4.2 2 3.4 0.7 2.2 0.9 2.1 1.2 6.6-0.1 1.7-0.6 1.4-0.3 1.7 0.3 1.2 0.7 1.4 1.6 2.7 0.6 1.5 0.1 1.3-0.5 1.5-0.5 0.5-2.1 1.9-0.3 0.9 0.2 1.2 0.7 2 0.2 2.5-0.4 1.6-0.4 0.6-0.6 0.4-2.6 0.3-0.6 0.4-0.3 0.7-0.7 2.5-0.8 2.2-0.3 1.8 0 2 0.2 2.2 0.8 2.4 0.2 1-0.2 0.7-1 1-2.2 0.8-1 1-1.2 3-0.1 0.8 0.3 2.4-0.2 0.7-1 1-2.1 1-3.1 0.9-1.4 0.6-1.1 1.1-0.6 2.5-0.4 0.7-1.7 2.4-5.9 10.7-1 3.2-0.3 1.9-0.3 3.9-0.4 1.7-0.7 1.4-3.9 5.4-0.6 1.4-0.1 0.9 0.1 1.9 1.2 3.5 0.3 1.7-0.2 1.8-0.9 2.1-0.3 1.2-0.2 2.1-0.3 1.4-1.2 2-0.6 1.5-1.4 5.9-1.2 3 0 1.9 0.4 2.2 0.1 2 0.4 1.9 0.9 1.8 0.9 2.2 0.3 2.8 0.6 2 0.8 1.3 1.5 1.6 1.4 1.7 4 4.2 0.8 0.5 1.1 0.5 2.1 0.3 1.3 0.1 5.4-0.7 0.9 0 2.6 0.4 0.8 0 2.4-0.6 0.7 0.2 0.7 0.4 0.4 1.1 0.5 1.8 1.2 1.9 0.7 1.3 0.8 3.1 0.6 0.7 0.8 0.4 1.6 0.2 3-0.2 1.8 0.2 2.4 0.7 1.8-0.1 0.8-0.2 1.8-1.4 5.2 26.5-16.6 27.2 0.4 18.1 25.8-1.9 8.5 18.8-6.8 26.2-25.8 5.7-8.6 11.2-6.8 20.7-3.5 28.3-6.8 17 0 18.8 3.4 26.5-5.2 22.7-18.8 18.9-24.1 20.9-6.7 23.3-14.5-2.1-14.4-0.8-20.2-4.2-2.6-1.4-2-5.8-4.5-5.1-1-3.3 2.7 1.1 2.4 2.1 4.2 5 2.8 2 2.3 0.1 1.1-1.7-0.6-3.4-2.2 0.4-1.8-1-3.5-3.6-2.3-1.5-2.1-0.9-2.2-0.5-2.6-0.1-4.9-2-8.2-9.1-4.9-2.5-4.4 0-1.5-0.4-10.9-7.4-1.6-3.3-0.9-11.9-1.3-5-10-13.7-1.4-5 1.3-13.5-1.3-5-1.4-2.6-5.8-6.4-1.4-1.2-0.7-1.2-0.4-1.4-0.4-3.1-0.6-1.2-4.6-4-9.5-6.5-4.2-4.5-4.6-10.7-2.3-22.5 1.8-25.8-2.4-14.6 0.3-1.4 1.2-2.8 0.3-1.4-0.1-1.8-1.7-4.4-1.1-6-0.9-2.7-1.7-2.6 1.9-3.1-0.2-10.6 0.6-4.7 3-3 9.2-4.1 2.4-3.2-0.2-2.5-1.9-3.9 0.2-2.7 2.1-2.1 0.7-1 0.8-2.5 0.1-1.2-0.5-1.5-1.4-2.1-3.7-3-2.6-3.6-5.8-5.7-1-0.5-1.8-0.4-1.1-1-0.3-0.8-0.5-3.4-1.5-5.2-0.5-13.4-1.8-11.1-1.9-6.2-3.8-4.1-9.3-7-1.5-2.2-2.3-4.6-1.9-1.9-2.5-1.9-4.7-5.2-2.9-4.6-1.5-3.2-0.7-2-0.7-6.1-1.7-4-0.7-7.8-1.7-4.2-0.8-5.3-0.7-1.3-1.8-2.5-0.8-1.3-0.9-3.5-0.1-3.5 0.6-6.8-1.4-13.7-2-7.1-3.2-6.7-0.1-1.5 0.2-1.5-0.1-1.4-0.9-3.7-1.5-3.4 0.3-3.1 3-2.3 3.7-0.4 2.9 2.8 0.9-2.3-0.2-2.6-0.6-2.6-0.1-2.6-4.7-0.1-1.9-5.9 0-13.4 0.3-1.7 1.3-2.9 0.3-1.5 0-3.6 0.3-1.5 1.1-1.1 0.5-0.9 1.5-0.6 0.4-0.5-1-4 0.2-1.9 0.6-1.8 0.9-1.7 1.2-1.6 1.6 2.2 0.2 2.5-0.9 5.3 2.8-4 0.5-6.9-0.2-7.5 0.6-5.7 1.6-2.7 9.1-11.1 2.4-1.9 2.6-0.4 3 1.8 0-39.3 1.1-3.7 2.8-6.8 0.9-3.6 1.1 2.5 1.1 0.1 2.6-2.6 0 0.9 2 2.2 4.9 3.3 1.6 1.6 0.6 1.9 1.2 7.6 1.3 1.9 5.8 3.3 1.4 1.9 0.6 2.3 1.4 2.6 2.6 3.6 3.8 2.9 1 1.3 0.4 1.5 0.2 3.1 0.3 1.5 2.5 4.8 0.9 2.3 0.3 3.4 1 3.4 4.5 3.7 1.1 2.1 0.4 1.9 1.1 2.6 2.2 4.1 3.3 3.6 0.7 1.4 0.6 3.3 0.6 1.3 1.6 1.3 1.8 0.4 1.8 0.2 1.9 0.6 0.9 0.6 1.6 1.6 1.2 0.8 3 0.7 2.9-0.5 4.9-1.2 2.3-0.9 3.3-4.7 2.4-2.3 4.2-2.5 5-2 5.1-0.3 4.5 2.7 2.2 4.3 1.3 0.1 2.7-2.9 1.2-2.2 0.6-0.2 1.4 0.9 0.7 1.1 1.2 3.9 4.1-2.5 4.6-1.2 10.5-0.4 6.9-3.3 4.9-1.3 3.1-2.4 3.2-1.7 12.8-19.9 0-36.9 6.8-16.6 18.9 1.9 8.6 9.2 15.5 1.8 10.3-11 13.7-16.6 29.2-11.1 17.2-18.4 13.7-3.6 16.1-2.7-1 13.3-0.7 2.3z" id="MDG5866" name="Atsimo-Andrefana">
+						</path></g></a>
+						</svg>
+                        </svg>
+
+                        <div id="provinceInfo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <di></di>
+    </div>
+
+
+    <!--end main content-->
+    <!--import script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        const primaryColor = '#4834d4'
+        const warningColor = '#f0932b'
+        const successColor = '#6ab04c'
+        const dangerColor = '#eb4d4b'
+
+        const themeCookieName = 'theme'
+        const themeDark = 'dark'
+        const themeLight = 'light'
+
+        const body = document.getElementsByTagName('body')[0]
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date()
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
+            var expires = "expires=" + d.toUTCString()
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+        }
+
+        function getCookie(cname) {
+            var name = cname + "="
+            var ca = document.cookie.split(';')
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1)
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length)
+                }
+            }
+            return ""
+        }
+
+        loadTheme()
+
+        function loadTheme() {
+            var theme = getCookie(themeCookieName)
+            body.classList.add(theme === "" ? themeLight : theme)
+        }
+
+        function switchTheme() {
+            if (body.classList.contains(themeLight)) {
+                body.classList.remove(themeLight)
+                body.classList.add(themeDark)
+                setCookie(themeCookieName, themeDark)
+            } else {
+                body.classList.remove(themeDark)
+                body.classList.add(themeLight)
+                setCookie(themeCookieName, themeLight)
+            }
+        }
+
+        function collapseSidebar() {
+            body.classList.toggle('sidebar-expand')
+        }
+
+        window.onclick = function(event) {
+            openCloseDropdown(event)
+        }
+
+        function closeAllDropdown() {
+            var dropdowns = document.getElementsByClassName('dropdown-expand')
+            for (var i = 0; i < dropdowns.length; i++) {
+                dropdowns[i].classList.remove('dropdown-expand')
+            }
+        }
+
+
+
+        var ctx = document.getElementById('myChart')
+        ctx.height = 700
+        ctx.width = 1000
+
+        var data = {
+            labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre'],
+            datasets: [{
+                fill: false,
+                label: 'Guéris',
+                borderColor: "#34d4c1",
+                data: [0,0,0,0, 2, 0, 0, 1, 0, 0],
+                borderWidth: 2,
+                lineTension: 0,
+            }, {
+                fill: false,
+                label: 'cas',
+                borderColor: "#2bf032",
+                data: [0,0,0,3, 1, 0, 3, 0, 0, 0],
+                borderWidth: 2,
+                lineTension: 0,
+
+            }, {
+                fill: false,
+                label: 'Décés',
+                borderColor: "#d61e1e",
+                data: [0,0,0,0, 0, 0, 0, 0, 0, 0],
+                borderWidth: 2,
+                lineTension: 0,
+            }]
+        }
+
+        var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: {
+                maintainAspectRatio: false,
+                bezierCurve: false,
+            }
+        })
+    </script>
+    <!-- end import script -->
+
+    <script src="{{url_for('static',filename='/js/pie.js')}}"></script>
+    <script src="{{url_for('static',filename='/js/map.js')}}"></script>
+    <script src="{{url_for('static',filename='/js/ma.js')}}"></script>
+
+</body>
+
+</html>

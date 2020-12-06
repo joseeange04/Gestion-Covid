@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='/home.css')}}" />
+    <title>Administrator</title>
+</head>
+<body>
+
+
+<div class="text-center">
+        <div class="container">
+                <div class="navbar">
+                  <div class="menu">
+                    <div title="YoungTeck"><h3 class="logo">Young<span>Teck</span></h3>
+                        <span><a href="/">Retour à l'acceuil</a></span>
+                    </div>
+                    <div class="hamburger-menu">
+
+                      <div class="bar"></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="main-container">
+                  <div class="main">
+                    <header>
+                      <div class="overlay">
+                        <div class="inner">
+                          <h2 class="title">Gestion et statistique Covid 19 </h2>
+                          <p>
+                            Avec Python,Flask et MongoDB
+                          </p>
+                          <h1>Bienvenu dans la page d'administrateur!</h1>
+                          <span>Veuilleuz choisir l'action que vous souhaitez faire ci-dessous:</span>
+                          <p>&#128516</p>
+                          <p>&#128151</p>
+
+                            <a href="/final" class="btn btn-success">Madagascar</a>
+                            <a href="/liste" class="btn btn-info"> afficher la liste </a>
+                            <a href="/add" class="btn btn-warning">Ajouter</a>
+                            <a href="/supprimer" class="btn btn-danger"> supprimer </a>
+                            <a href="/maj" class="btn btn-primary"> mise a jour </a>
+                            <a href="/register" class="btn btn-dark">enregistrer</a>
+                            <a href="{{url_for('logout')}}" class="btn btn-secondary">logout</a>
+                        </div>
+            </div>
+                    </header>
+</div>
+                </div>
+        </div>
+</div>
+</body>
+</html>

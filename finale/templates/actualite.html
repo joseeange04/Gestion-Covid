@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Actualité</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{url_for('static',filename='css/actu.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static',filename='/bootstrap.min.css')}}"/>
+    </header>
+
+    <body>
+        
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8">
+                <article id="post" >
+                <h1>Actualité mondiale de covid-19</h1>
+                <span class="published"> 10/11/2020 </span>
+                |
+                    <a class="btn btn-primary" href="/">retour</a>
+                <!--creation du div qui englobera tout le carroussel-->
+                <div id="option" class="carousel slide" data-ride="carousel">
+                    <!--indicateur de pagination-->
+                    <ul class="carousel-indicators">
+                        <li data-target="#option" data-slide-to="0" class="active"></li>
+                        <li data-target="#option" data-slide-to="1"></li>
+                        <li data-target="#option" data-slide-to="2"></li>
+                    </ul>
+                    <!--Les diapo-->
+                    <div class="carousel-inner">
+                        <!--Mis en place des éléments du diapo-->
+                        <div class="carousel-item active">
+                            <img src="{{url_for('static',filename='images/carte.svg.png')}}" width="800" height="450">
+                            <div class="carousel-caption">
+                                <h3>Coronasvieus dans le monde</h3>
+                                <p> Les pays Européens sont les plus touchés par ce coronasvirus. </br>
+                                    Suivant sont les statistiques du covid-19 dans le monde suivant 
+                                    le degrés de l'importance 
+                                </p>
+                            </div>
+                        </div>
+                        <!--slide2-->
+                        <div class="carousel-item">
+                            <img src="{{url_for('static',filename='images/ketrika1.png')}}" width="800" height="450">
+                            <div class="carousel-caption">
+                                <h3>Covid : les Etats-Unis creusent la piste des anticorps</h3>
+                                <p> L'agence américaine du médicament, a autorisé lundi l'utilisation en 
+                                    urgence du traitement expérimental développé par Eli Lilly dans le 
+                                    cas de patients n'étant pas hospitalisés mais risquant de tomber
+                                     gravement malades du fait de leur âge ou de leur état de santé.
+                                </p>
+                            </div>
+                        </div>
+                        <!--slide3-->
+                        <div class="carousel-item ">
+                            <img src="{{url_for('static',filename='images/ketrika.jpg')}}" width="800" height="450">
+                            <div class="carousel-caption">
+                                <h3>(COVID-19) La partie continentale de la Chine signale un nouveau cas transmis localement</h3>
+                                <p> Un total de 22 nouveaux cas confirmés de COVID-19 a été signalé lundi sur
+                                     la partie continentale de la Chine, dont un cas transmis localement
+                                      et 21 cas importés, a annoncé mardi la Commission nationale de la santé.
+
+                                    Le cas transmis localement a été signalé à Shanghai,
+                                     a précisé la commission dans son rapport quotidien.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--misen place des controle précédent/prochain-->
+                    <a href="#option" class="carousel-control-prev" data-slide="prev">
+                        <!--plaçons l'icone-->
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#option" class="carousel-control-next" data-slide="next">
+                        <!--plaçons l'icone-->
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+               
+            <table class="table table-dark" id="tableau">
+                <div class="ima">
+                    <img src="{{url_for('static',filename='images/Capture.png')}}" id="graphe" alt="graphe" /></div>
+                <tr>
+                    <th>Pays</th>
+                    <th>Cas confirmé</th>
+                </tr>
+                <tr>
+                    <td>US</td>
+                    <td>10 110 552</td>
+                </tr>
+                <tr>
+                    <td>Inde</td>
+                    <td>8 591 730</td>
+                </tr>
+                <tr>
+                    <td>Brésil</td>
+                    <td>5 675 032</td>
+                </tr>
+                <tr>
+                    <td>France</td>
+                    <td>1 856 292</td>
+                </tr>
+                <tr>
+                    <td>Russie</td>
+                    <td>1 781 997</td>
+                </tr>
+                <tr>
+                    <td>Espagne</td>
+                    <td>1 381 218</td>
+                </tr>
+                <tr>
+                    <td>Argentine</td>
+                    <td>1 250 499</td>
+                </tr>
+                <tr>
+                    <td>Mexico</td>
+                    <td>967 825</td>
+                </tr>
+                <tr>
+                    <td>Italy</td>
+                    <td>960 373</td>
+                </tr>
+                <tr>
+                    <td>Peru</td>
+                    <td>922 333</td>
+                </tr>
+                <tr>
+                    <td>Afrique du Sud</td>
+                    <td>738 525</td>
+                </tr>
+                <tr>
+                    <td>Iraque</td>
+                    <td>501 733</td>
+                </tr>
+                <tr>
+                    <td>Ukraine</td>
+                    <td>483 153</td>
+                </tr>
+            </table>
+            
+            </article>
+        </div>
+            <div class="col-6 col-md-4" id="pub">
+            <div id="ketrika">
+            <img src="{{url_for('static',filename='images/ketrika2.jpg')}}"  width="400" height="200"/></br>
+                <span>Achetez en ligne avec ketrika</span>
+            </div>
+            <div id="organic">
+            
+            <div class="ima">
+            <img src="{{url_for('static',filename='images/images.jpg')}}"/></br>
+             </div>
+            <span>Renforcer vos anticorps avec le Covid Organics</span>
+                {% for x in i %}
+                <div class="{{x['couleur']}} {{x['couleur_text']}}">{{x['comment']}}<br>{{x['date']}}</div>
+                {% endfor %}
+                 <form action="{{url_for('actualite')}}" method="get">
+                     <textarea name="text" class="textarea"required></textarea>
+                     <button type="submit" class="btn btn-danger">envoyer</button>
+                    <input value="alert alert-dark" type="radio"name="couleur"checked>dark</input><br>
+                    <input value="alert alert-danger" type="radio" name="couleur">red</input><br>
+                    <input value="alert alert-warning" type="radio" name="couleur">yellow</input><br>
+                    <input value="alert alert-success" type="radio" name="couleur">green</input><br>
+              <!-- <select name="couleur_text">
+                    <option value="text-primary">bleu</option>
+                    <option value="text-danger">rouge</option>
+                    <option value="text-secondary">gris</option>
+                </select>-->
+            </form>
+            </div>
+            </div>
+          </div>
+    </body>
+</html>
+
+

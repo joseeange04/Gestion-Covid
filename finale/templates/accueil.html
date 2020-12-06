@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion et Statistique covid 19</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/accueil.css')}}"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="menu">
+          <div title="YoungTeck"><h3 class="logo">Young<span>Teck</span></h3></div>
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-container">
+        <div class="main">
+          <header>
+            <div class="overlay">
+              <div class="inner">
+                <h2 class="title">Gestion et statistique Covid 19 </h2>
+                
+              </div>
+            </div>
+          </header>
+        </div>
+
+        <div class="shadow one"></div>
+        <div class="shadow two"></div>
+      </div>
+
+      <div class="links">
+        <ul>
+          <li>
+            <a href="/final" style="--i: 0.05s;">Statistiques</a>
+          </li>
+          <li>
+            <a href="/access" style="--i: 0.1s;">login</a>
+          </li>
+          <li>
+            <a href="/actualite" style="--i: 0.15s;">Actualités</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    	<link rel="stylesheet" href="{{url_for('static',filename='/bootstrap.min.css')}}"/>
+    <title>supprimer</title>
+</head>
+<body>
+<form  action = "http://localhost:5000/liste"method = "GET" method="DELETE">
+     <p class="alert alert-primary">Clé</p>
+    <p><input type="tel" name="reference" class="form-control" required></p>
+     <button type="submit" value="submit" class="btn btn-dark">effacer</button>
+</form>
+<br>
+    <a href="/liste" class="btn btn-primary">Liste</a>
+<a href="/home" class="btn btn-success">Retour</a>
+</body>
+</html>

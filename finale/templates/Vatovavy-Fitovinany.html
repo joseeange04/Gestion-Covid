@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vatovavy-Fitovinany</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" type="image/png" href="{{url_for('static',filename='/css/AT-pro-logo.png')}}"/>
+
+	<!-- Import lib -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/all.min.css')}}">
+    <!-- End import lib -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style3.css')}}">
+
+	<!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+</head>
+<body class="overlay-scrollbar">
+	<!-- navbar -->
+	<div class="navbar">
+		<!-- nav left -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link">
+				<a href="/" target="_blank"> Revenir à la page d'accueil</a>
+				</a>
+			</li>
+
+		</ul>
+		<!-- nav right -->
+		<ul class="navbar-nav nav-right">
+			<li class="nav-item mode">
+				<a class="nav-link" href="#" onclick="switchTheme()">
+					<i class="fas fa-moon dark-icon"></i>
+					<i class="fas fa-sun light-icon"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- end navbar -->
+	<!-- main content -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-primary">
+					<h3>Guéris</h3>
+					<p>{{b}}</p>
+					<p>+0</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-warning">
+					<h3>Cas Confirmés</h3>
+						<p>{{a}}</p>
+						<p>+0</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<h3>Décès</h3>
+					<p>{{c}}</p>
+					<p>+0</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-danger">
+					<h3>Nb. TESTS</h3>
+					<p>29</p>
+				</div>
+			</div>
+		</div>
+			<div class="row">
+					<div class="card">
+						<div class="card-header">
+							<h3>
+								Chartjs
+							</h3>
+							<div class="card-content">
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">Mois</th>
+									<th  scope="col">Nouveau_cas</th>
+									<th  scope="col">Guéris</th>
+									<th  scope="col">Décés</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for o in i %}
+								<tr>
+									<td scope="row">{{o['mois']}}</td>
+									<td>{{o['Nouveau_cas']}}</td>
+									<td>{{o['Gueris']}}</td>
+									<td>{{o['Deces']}}</td>
+								</tr>
+							{% endfor %}
+										<span class="dot">
+											<i class="bg-danger"></i>
+										</span>
+									</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+						</div>
+					<div class="card-content">
+							<canvas id="myChart"></canvas>
+						</div>
+					</div>
+								<div class="col-4 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+						.......
+						</h3>
+						<i class="fas fa-ellipsis-h"></i>
+					</div>
+					<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" viewbox="0 0 1000 1985" id="mada-map">
+
+						<a href="/Vatovavy-Fitovinany"><g id="Vatovavy-Fitovinany"><title>Vatovavy-Fitovinany</title><desc><image xlink:href="{{url_for('static',filename='image/Vatovavy-Fitovinany.jpg')}}"></image><p></p></desc> <path d="M740.3 1212.3l-7.4 23-13.7 52.1-1.5 2.3-1.8 2.3-1.1 2.3 0.5 2.1 1.8-1.9 1 0.6 0.4 1.9-0.3 2.4-0.9 2.2-2.4 4.3-0.5 2.6-0.5 5-1.3 5-4.9 11.7-0.5 2-0.3 4.5-2.2 12.6-2 5.3-1.9 3.7-17.3 56.3-17.5 40.8-17.4 40.8-1.9 9.8-4.5 9.9-2.5 17-14.4-12.2-17.2 0-17.2-7.5-5.1-16.7-12-7.4-5.2 5.6-12-1.9-22.3-11.1-6.9-11.2 15.4-9.2 20.7-11.1-5.2-11.2 5.2-11.1 5.1-22.2 8.6-42.5-5.2-12.9-3.4-11 6.9-16.6 5.1-27.6 1.7-23.9 6.9-7.4 10.3-1.8 1.7-9.2 1.7-20.2 10.3-3.6 12.6-12.2 0.9 0.3 0.9 0 1.6-0.3 3.6-0.2 1.5-0.5 2.5-1.6 1.4-0.6 1.8-0.2 1.7 0.2 1.7 0.4 1.9 0.1 1.6-0.3 0.7-0.4 1.5-1.5 1.8-1.2 0.8-0.2 1.6-0.4 1.7-0.2 2 0.2 2.5 1.6 2.6 2.1 1.5 0.9 1.2 0.6 0.9-0.1 1.4-0.6 0.7-1.1 0-0.7-1-2-0.2-1.6 0.6-2.4 4.2-7 0.3-1.6 0.5-1.6 0.4-0.6 1.4-1.7 0.2-0.7 0.3-1.6 0.3-0.7 1.3-1.7 0.1-0.6-0.2-0.7-0.8-1.2-0.2-1.5 0.7-1.2 1.1-0.9 1.7-0.5 1.3 0 1.5 0.6 1 1.1 2.9 5.1 0.4 0.5 2.4 1.8 3.1 1.8 1.6 0.7 1.4 0.4 1.9-0.1 4.3-1.2 1.4-0.1 0.9 0.3 0.8 0.5 0.8 0.7 2.4 1.7 1.1 1.2 0.6 1.4 0.1 0.8-0.1 2.8 0.2 1.1 0.5 1 1.2 1.2 1.1 0.5 6.8 1.6 9.7-0.1 11.3 3.1 1.2 0.6z" id="MDG5882" name="Vatovavy-Fitovinany">
+						</path></g></g></a>
+						</svg>
+
+						<div id="provinceInfo"></div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+
+			</div>
+			<di></di>
+		</div>
+
+
+	<!-- end main content -->
+	<!-- import script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script>
+		const primaryColor = '#4834d4'
+const warningColor = '#f0932b'
+const successColor = '#6ab04c'
+const dangerColor = '#eb4d4b'
+
+const themeCookieName = 'theme'
+const themeDark = 'dark'
+const themeLight = 'light'
+
+const body = document.getElementsByTagName('body')[0]
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date()
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000))
+  var expires = "expires="+d.toUTCString()
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+}
+
+function getCookie(cname) {
+  var name = cname + "="
+  var ca = document.cookie.split(';')
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1)
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length)
+    }
+  }
+  return ""
+}
+
+loadTheme()
+
+function loadTheme() {
+	var theme = getCookie(themeCookieName)
+	body.classList.add(theme === "" ? themeLight : theme)
+}
+
+function switchTheme() {
+	if (body.classList.contains(themeLight)) {
+		body.classList.remove(themeLight)
+		body.classList.add(themeDark)
+		setCookie(themeCookieName, themeDark)
+	} else {
+		body.classList.remove(themeDark)
+		body.classList.add(themeLight)
+		setCookie(themeCookieName, themeLight)
+	}
+}
+
+function collapseSidebar() {
+	body.classList.toggle('sidebar-expand')
+}
+
+window.onclick = function(event) {
+	openCloseDropdown(event)
+}
+
+function closeAllDropdown() {
+	var dropdowns = document.getElementsByClassName('dropdown-expand')
+	for (var i = 0; i < dropdowns.length; i++) {
+		dropdowns[i].classList.remove('dropdown-expand')
+	}
+}
+
+
+
+var ctx = document.getElementById('myChart')
+ctx.height = 500
+ctx.width = 500
+var data = {
+	labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre','Novembre', 'Décembre'],
+	datasets: [{
+		fill: false,
+		label: 'Guéris',
+		borderColor: "#34d4c1",
+		data: [0,0,0,2,5,7,12,5,3,7],
+		borderWidth: 2,
+		lineTension: 0,
+	}, {
+		fill: false,
+		label: 'cas',
+		borderColor: "#2bf032",
+		data: [0,0,0,6,20,4,39,10,12,2],
+		borderWidth: 2,
+		lineTension: 0,
+
+	}, {
+		fill: false,
+		label: 'Décés',
+		borderColor: "#d61e1e",
+		data: [0,0,0,0,0,0,1,0,0,0],
+		borderWidth: 2,
+		lineTension: 0,
+	}]
+}
+
+var lineChart = new Chart(ctx, {
+	type: 'line',
+	data: data,
+	options: {
+		maintainAspectRatio: false,
+		bezierCurve: false,
+	}
+})
+
+	</script>
+
+	<!-- end import script -->
+
+	<script src="{{url_for('static',filename='/js/pie.js')}}"></script>
+	<script src="{{url_for('static',filename='/js/map.js')}}"></script>
+	<script src="{{url_for('static',filename='/js/ma.js')}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static',filename='/bootstrap.min.css')}}" rel="stylesheet"/>
+    <title>update</title>
+</head>
+<body></br>
+<a href="/home" class="btn btn-success">Retour</a></br>
+<form action="http://localhost:5000/success" method="POST">
+</br>
+    <p class="alert alert-danger">reference</p>
+    <p><input class="form-control" name="reference" type="tel"></p>
+    <p class="alert alert-primary">Nouveau_cas</p>
+    <p><input class="form-control" name="nouveau_cas" type="tel"></p>
+    <p class="alert alert-success">Guéris</p>
+    <p><input class="form-control" name="gueris" type="tel"></p>
+    <p class="alert alert-danger">Décès</p>
+    <p><input class="form-control" name="deces" type="tel"></p>
+    <p class="alert alert-warning">Mois</p>
+    <p><input class="form-control" name="mois" type="text"></p>
+    <button class="btn btn-danger" type="submit">Ajouter</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.carousel{
+    max-width: 750px;
+    height: auto;
+}
+.carousel-inner img{
+    width: 100%;
+    height: auto;
+}
+#tableau
+{
+    
+    width: 40%;
+    margin-top: 5%;
+}
+td, th{
+    border: 1px solid black;
+}
+#pub
+{
+    margin-top: 10%;
+}
+#ketrika
+{
+    margin-bottom: 5%;
+}
+#graphe
+{
+    width: 80%;
+    position: relative;
+    left: ;
+}

@@ -1,0 +1,30 @@
+form
+{
+    margin-top: 5%;
+}
+body
+{
+    background-color: beige;
+}
+h1, h2
+{
+    color: blue;
+    margin-top: 20px;
+}
+
+input
+{
+    width: 20%;
+    height: 40px;
+    border-radius: 10%;
+    border-color: aqua;
+}
+button
+{
+    color: blue;
+}
+
+div
+{
+    margin-bottom: 1%;
+}

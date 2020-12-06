@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>liste</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/bootstrap.min.css')}}"/>
+</head>
+<body></br>
+<a href="/home" class="btn btn-danger">Retour</a>
+</br>
+<div class="card">
+					<div class="card-header">
+						<h3>
+							Table
+						</h3>
+					</div>
+<div class="card-content">
+						<table class="table table-striped table-dark">
+							<thead>
+								<tr>
+									<th scope="col">reference</th>
+									<th scope="col">Mois</th>
+									<th scope="col">nouveaux cas</th>
+									<th scope="col">Guéris</th>
+									<th scope="col">Décès</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for o in afficher_liste %}
+								<tr>
+									<th scope="row">{{o['_id']}}</th>
+									<th>{{o['mois']}}</th>
+									<td>{{o['Nouveau_cas']}}</td>
+									<td>{{o['Gueris']}}</td>
+									<td>{{o['Deces']}}</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+</div>
+</div>
+
+</body>
+</html>
